@@ -2,5 +2,5 @@ crewai_tools
 Flask==3.0.2
 gunicorn==21.2.0
 crewai==1.6.0
-python-dotenv==1.0.1
+python-dotenv>=1.1.1
 openai==1.55.3
