@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Meal Planner</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Poppins, Arial, sans-serif;
+            background: linear-gradient(135deg, #0083b0, #00b4db);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(1.02); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            width: 450px;
+            box-shadow: 0 0 25px rgba(0,0,0,0.2);
+            text-align: center;
+            animation: slideUp 0.8s ease-in-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            margin-bottom: 25px;
+            font-size: 28px;
+            font-weight: 600;
+            color: #0077b6;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin: 12px 0 5px;
+            text-align: left;
+            color: #444;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            outline: none;
+            margin-bottom: 10px;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #0083b0;
+            box-shadow: 0 0 8px rgba(0,131,176,0.3);
+        }
+
+        button {
+            margin-top: 12px;
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #0077b6;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #0096c7;
+            transform: translateY(-2px);
+            box-shadow: 0 0 12px rgba(0,0,0,0.2);
+        }
+
+        .loading {
+            display: none;
+            margin-top: 18px;
+        }
+
+        .loading img {
+            width: 70px;
+        }
+
+        .loading p {
+            margin-top: 6px;
+            font-weight: 500;
+            color: #0077b6;
+        }
+    </style>
+
+    <script>
+        function showLoading() {
+            document.getElementById("loading").style.display = "block";
+        }
+    </script>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>🥗 AI Meal Planner</h2>
+
+    <form action="/generate" method="post" onsubmit="showLoading()">
+        <label>Fitness Goal</label>
+        <input type="text" name="goal" placeholder="Weight loss, muscle gain..." required>
+
+        <label>Food Preferences</label>
+        <input type="text" name="preferences" placeholder="Veg, Non-veg, Vegan..." required>
+
+        <button type="submit">Generate Meal Plan</button>
+    </form>
+
+    <div id="loading" class="loading">
+        <img src="https://i.gifer.com/YCZH.gif">
+        <p>Generating AI Meal Plan...</p>
+    </div>
+</div>
+
+</body>
+</html>
