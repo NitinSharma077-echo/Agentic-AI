@@ -1,6 +1,6 @@
-Flask
-gunicorn
-crewai==1.6.0
 crewai_tools
+Flask==3.0.2
+gunicorn==21.2.0
+crewai==1.6.0
 python-dotenv>=1.1.1
-openai
+openai==1.55.3
