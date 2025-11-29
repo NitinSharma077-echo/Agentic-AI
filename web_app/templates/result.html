@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meal Plan Result</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Poppins, Arial, sans-serif;
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            width: 650px;
+            border-radius: 18px;
+            box-shadow: 0 0 25px rgba(0,0,0,0.2);
+            animation: slideUp 0.8s ease-in-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #004b8d;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+
+        pre {
+            background: #f1f7ff;
+            padding: 18px;
+            border-radius: 10px;
+            font-size: 15px;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            border-left: 6px solid #0072ff;
+            max-height: 450px;
+            overflow-y: auto;
+        }
+
+        a {
+            display: block;
+            margin-top: 22px;
+            text-align: center;
+            font-size: 18px;
+            text-decoration: none;
+            color: #0072ff;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            color: #004b8d;
+            transform: translateY(-2px);
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="card">
+    <h2>🍽️ Your Personalized Meal Plan</h2>
+    <pre>{{ result }}</pre>
+    <a href="/">← Generate another plan</a>
+</div>
+
+</body>
+</html>
